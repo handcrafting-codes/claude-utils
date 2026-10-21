@@ -1,6 +1,8 @@
 #!/bin/bash
 # Status line converted from ~/.bash_prompt PS1:
 #   \u@\h: \w [branch dirty-bits]
+# The one sf org alias rendered green; any other target (including none) renders red.
+SAFE_SF_ORG="servicedev"
 input=$(cat)
 cwd=$(echo "$input" | jq -r '.workspace.current_dir // .cwd')
 
@@ -62,9 +64,7 @@ while [ "$dir" != "/" ] && [ -n "$dir" ]; do
         if [ -z "$sf_org" ]; then
             sf_org=$(jq -r '."target-org" // empty' ~/.sf/config.json 2>/dev/null)
         fi
-        # servicedev is the only org this machine should target; anything else
-        # (including none) renders red as a wrong-org tripwire.
-        if [ "$sf_org" = "servicedev" ]; then
+        if [ -n "$SAFE_SF_ORG" ] && [ "$sf_org" = "$SAFE_SF_ORG" ]; then
             sf_info=$(printf '\033[32m⚡%s\033[0m' "$sf_org")
         else
             sf_info=$(printf '\033[31m⚡%s\033[0m' "${sf_org:-no-org}")

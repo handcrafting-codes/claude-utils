@@ -23,30 +23,25 @@ rendering empty.
 
 ## Install
 
-1. Copy the script and make it executable:
+From a clone:
 
-   ```bash
-   cp statusline-command.sh ~/.claude/statusline-command.sh
-   chmod +x ~/.claude/statusline-command.sh
-   ```
+```bash
+bash claude-statusline/install.sh my-sandbox
+```
 
-2. Add to `~/.claude/settings.json`:
+Or without cloning:
 
-   ```json
-   {
-     "statusLine": {
-       "type": "command",
-       "command": "bash ~/.claude/statusline-command.sh"
-     }
-   }
-   ```
+```bash
+curl -fsSL https://raw.githubusercontent.com/hangelo/claude-utils/main/claude-statusline/install.sh | bash -s -- my-sandbox
+```
 
-3. **Set your approved org.** The script greenlights exactly one org alias and shows every
-   other target in red. Edit this line in the script to your own sandbox alias:
+`my-sandbox` is the one org alias rendered green; every other target renders red. Omit it
+and every org renders red. The installer copies the script to `~/.claude/statusline-command.sh`,
+backs up `~/.claude/settings.json` and sets its `statusLine`. Restart Claude Code.
 
-   ```bash
-   if [ "$sf_org" = "servicedev" ]; then
-   ```
+To change the green org later, edit `SAFE_SF_ORG` at the top of the installed script.
+
+For the 5-hour / 7-day usage bars at the right of the footer, see [`usage-limits`](../usage-limits/README.md).
 
 Requires `jq` (`brew install jq`). Everything else is standard macOS/git tooling.
 
