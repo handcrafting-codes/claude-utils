@@ -5,7 +5,7 @@
 #   safe-sf-org-alias: the one org rendered green; omit it and every org renders red.
 set -euo pipefail
 
-REMOTE="https://raw.githubusercontent.com/hangelo/claude-utils/main/claude-statusline/statusline-command.sh"
+REMOTE="https://raw.githubusercontent.com/handcrafting-codes/claude-utils/main/claude-statusline/statusline-command.sh"
 
 command -v jq >/dev/null || { echo "jq is required: brew install jq" >&2; exit 1; }
 

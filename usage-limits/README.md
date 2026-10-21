@@ -25,7 +25,7 @@ show and the footer stays as it was. The bars appear after the first response of
 From GitHub, inside Claude Code:
 
 ```
-/plugin marketplace add hangelo/claude-utils
+/plugin marketplace add handcrafting-codes/claude-utils
 /plugin install usage-limits@claude-utils
 ```
 

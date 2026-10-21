@@ -32,7 +32,7 @@ bash claude-statusline/install.sh my-sandbox
 Or without cloning:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/hangelo/claude-utils/main/claude-statusline/install.sh | bash -s -- my-sandbox
+curl -fsSL https://raw.githubusercontent.com/handcrafting-codes/claude-utils/main/claude-statusline/install.sh | bash -s -- my-sandbox
 ```
 
 `my-sandbox` is the one org alias rendered green; every other target renders red. Omit it
