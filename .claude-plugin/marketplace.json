@@ -1,0 +1,7 @@
+{
+  "name": "claude-utils",
+  "owner": { "name": "Henrique" },
+  "plugins": [
+    { "name": "usage-limits", "source": "./usage-limits", "description": "Always-visible plan usage against the 5-hour and 7-day limits, with a /limits command" }
+  ]
+}

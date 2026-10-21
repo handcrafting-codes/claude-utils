@@ -1,0 +1,1 @@
+{ "name": "usage-limits", "version": "0.3.0", "description": "Always-visible plan usage against the 5-hour and 7-day limits, with a /limits command", "types": "./types/index.d.ts" }
